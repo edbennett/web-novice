@@ -150,7 +150,7 @@ In this case, because we're connecting via HTTPS, `curl` gives a lot more debugg
 
 HTTP status codes are three digits long, and almost always begin with 2, 3, 4, or 5. Status codes beginning `2xx` indicate that the request was successfully received, understood, and accepted; `3xx` indicates a redirect of some kind; `4xx` indicates an error caused by the client (for example the famous `404 Not found` where the client has requested a resource that does not exist on the server), and `5xx` indicates an error on the server side.
 
-It's rarely necessary to inspect the request, so if you're interested in the headers, it's more convenient to use `curl -i` to just show the response headers.
+It's rarely necessary to inspect the request, so if you're interested in the headers, it's more convenient to use `curl -I` to just show the response headers.
 
 ~~~
 $ curl -I https://carpentries.org
