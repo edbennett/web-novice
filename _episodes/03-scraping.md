@@ -1,13 +1,16 @@
 ---
-title: "Web Scraping"
+title: "Elements of Web Scraping with BeautifulSoup"
 teaching: 0
 exercises: 0
 questions:
 - "How can I obtain data in a programmatic way from web pages?"
 objectives:
-- "Understand "
+- "Have an idea about how to navigate the HTML element tree with Beautiful soup and extract relevant information."
 keypoints:
-- TODO 
+- "A BeautifulSoup object can be navigated in many ways" 
+- "Use `find` to look for the first element that matches the given criteria in a subtree"
+- "Use `find_all` to obtain a list of elements that matches the given criteria in a subtree"
+- "Use `find_parents` to get the list of ancestor of the given element"
 ---
 
 Sometimes, 
@@ -118,7 +121,7 @@ The HTML of the web page
 is in the `text` member of the response.
 We can pass that directly 
 the the BeautifulSoup constructor,
-obtainint a soup object 
+obtaining a soup object 
 that we still need to navigate:
 ~~~
 soup = BeautifulSoup(r.text,"html.parser")
@@ -169,13 +172,21 @@ that contains that text:
 'Upcoming Carpentries Workshops'
 ~~~
 {: .output}
+By using the `find` method on a `BeautifulSoup` object,
+we look at all of its descendants and 
+obtain other `BeautifulSoup` objects
+that we can search 
+in the same way as the original one.
 But how do we get the parent element?
 We can use the `find_parents()` method,
-which returns a list of parents 
-of a given element,
-starting from immediate parent 
+which returns a list of 
+`BeautifulSoup` objects
+that represents the ancestors in the tree
+of the given element,
+starting from the immediate parent 
 of the element itself 
-and ending with the root element
+and ending with the element 
+at the root of the tree
 (`soup` in this case).
 The second parent in the list
 is the one that also contains 
@@ -205,7 +216,7 @@ It seems we are on the right track.
 Now let's focus on the "table" element:
 ~~~
 (soup
- .find(string = "upcoming carpentries workshops")
+ .find(string = "Upcoming carpentries workshops")
  .find_parents()[1]
  .find("table"))
 ~~~
@@ -323,9 +334,13 @@ instructors
 > >     _,td1,td2 = row.find_all("td")
 > >     link = td1.find("a")["href"]
 > >     
-> >     td1_parts = td1.text.split("Instructors:")
-> >     location = td1_parts[0].strip()
-> >     instructors_string = td1_parts[1].strip()
+> >     td1_location_people = td1.text.split("Instructors:")
+> >     location = td1_location_people[0].strip()
+> >     # What about helpers?
+> >     people = td1_location_people[1].split("Helpers:")
+> >     instructors_string = people[0]
+> >     # we ignore helpers, might not be present
+> >     # helpers_string = people[1] 
 > >     instructors = [ n.strip() for n in instructors_string.split(",")]
 > >     date = td2.text.strip()
 > >     
@@ -343,6 +358,17 @@ instructors
 {: .challenge}
 
 
+## Additional material
+
+Beautiful Soup is a rich library
+that has a lot of powerful features 
+than we are able to discuss here.
+
+A close look at [the official documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+is worth the time 
+for anyone seriously interested 
+in web scraping.
+
 > ## Scraping Energy market data
 > Look at this page:
 > [Energy Market Data](https://www.epexspot.com/en/market-data?market_area=GB&trading_date=2021-03-14&delivery_date=2021-03-15&underlying_year=&modality=Auction&sub_modality=DayAhead&product=60&data_mode=table&period=)
@@ -351,6 +377,7 @@ instructors
 > > TODO
 > {: .solution}
 {: .challenge}
+
 
 ## Javascript code, the DOM and Selenium
 
@@ -367,9 +394,12 @@ from another URL,
 and populate the web page with that data
 and any additional element of the page design.
 
-In those cases, BeautifulSoup might not be enough
-(as it does not run the JavaScript code on the page),
+In those cases, 
+using `requests` and `BeautifulSoup`
+might not be enough
+(as `requests` gets the HTML
+without running the JavaScript code on the page),
 but you can use the Selenium Web Driver
-to load the page in a fully fledged browser 
+to load the page in a fully-fledged browser 
 and automate the interaction with it.
 
