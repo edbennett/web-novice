@@ -6,12 +6,18 @@ To follow this lesson, you will need to have a Unix shell and Python installed.
 If you do not already have these set up, then please follow the instructions at
 [the Carpentries workshop template][workshop-template]
 
-### The Request library
+### Requests and BeautifulSoup4
 
-The `requests` library is required.
-Please install it with your Python package manager,
-e.g., via pip, with `pip install --user requests`
+The `requests` and the `beautifulsoup4`
+libraries are required.
+Please install them with your Python package manager,
+e.g., via pip, with 
+~~~
+pip install --user requests beautifulsoup4
+~~~
+{: .language-bash}
 or with Anaconda.
+
 
 ### Met Office API Keys
 

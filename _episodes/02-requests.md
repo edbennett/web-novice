@@ -7,18 +7,21 @@ questions:
 - "How to interact with web services that require authentication?"
 - "What are the data formats that are used in HTTP messages?"
 objectives:
-- "Use the Python `requests` library for `get` and `post` requests"
+- "Use the Python requests library for `get` and `post` requests"
 - "Understand how to deal with common authentication mechanisms."
 - "Understand what else the `requests` library can do for you."
 keypoints:
-- TODO 
+- "GET requests are used to read data from a particular resource."
+- "POST requests are used to write data to a particular resource."
+- "GET and POST methods may require some form of authentication (POST usually does)"
+- "The Python requests library offers various ways to deal with authentication."
+- "curl can be used instead for shell-based workflows and debugging purposes."
 ---
 
 In this episode we are going to use 
 the Python `requests` library
 to interact with various web services 
 via the HTTP protocol.
-
 
 ## Some terminology
 
@@ -245,7 +248,7 @@ data["SiteRep"]["Wx"]
 ~~~
 {: .language-python}
 
-> ### Another location
+> ## Another location
 > As described in the API reference 
 > (https://www.metoffice.gov.uk/services/data/datapoint/api-reference)
 > the Met Office has a list of locations available 
@@ -261,8 +264,8 @@ data["SiteRep"]["Wx"]
 > ~~~
 > {: .language-python}
 > to get to the quantity of intest.
->  
-> > ### Solution
+>
+> > ## Solution
 > > We query the MetOffice API using
 > > ~~~
 > > sitelist_url = base_metoffice_url + 'val/wxfcs/all/json/sitelist'
@@ -359,15 +362,21 @@ has been successful.
 We can go to the [issue page](https://github.com/mmesiti/aimlac-cdt-2021-03/issues/1)
 and check that our new comment is there.
 
+> ## Curl and POST
+> Curl can be used as well for POST requests,
+> which can be useful for shell-based workflows.
+> One needs to use the `--data` option.
+{: .callout}
 
-> ### What have I asked you?
+
+> ## What have I asked you?
 > 
 > The request that generated a given `response` object
 > can be retrieved as `response.request`.
 > Can you see the headers of that request?
 > And what about the body of the message?
 > What is the type of the request object?
-> > ### Solution
+> > ## Solution
 > > To print the headers:
 > > ~~~
 > > { print(kv) for kv in response.requests.headers.items}
@@ -410,11 +419,11 @@ and check that our new comment is there.
 > {: .solution} 
 {: .challenge}
 
-> ### Forgot the key
+> ## Forgot the key
 > What error code do we get 
 > if we just forget to add the auth?
 > How do the headers of the request change?
-> > ### Solution
+> > ## Solution
 > > ~~~
 > > r = requests.post(url=url,data=body)
 > > r
@@ -441,4 +450,6 @@ Authentication is a vast topic.
 The requests library implements a number 
 of authentication mechanisms that you can use.
 To handle authentication for multiple requests,
-one could also use the `Session` 
+one could also use a `Session` object 
+from the `requests` library
+(see [Advanced Usage](https://requests.readthedocs.io/en/master/user/advanced/)).
