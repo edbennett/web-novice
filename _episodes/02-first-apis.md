@@ -146,15 +146,24 @@ example can be found [on GitHub][newton-docs].
 
 ## Authentication and identification
 
-Many web APIs restrict access to registered users or applications. This may be because they are used to control things that are specific to a particular user account, because different people have different privilege levels and so different endpoints available, or simply because the API provider wants to collect statistics on how the API is being used.
+Many web APIs restrict access to registered users or applications. This may be
+because they are used to control things that are specific to a particular user
+account, because different people have different privilege levels and so
+different endpoints available, or simply because the API provider wants to
+collect statistics on how the API is being used.
 
 Various ways exist for developers to authenticate to an API, including:
 
-* A username and password, via HTTP [basic][basic-auth] or [digest][digest-auth] authentication;
-* An authentication token (to identify you) or API key (to identify your application), generated on a developer dashboard page; and
-* OAuth tokens, generated programmatically&mdash;these are particularly useful for applications used by others to log into their own accounts, so your application never sees the credentials used.
+* A username and password, via HTTP [basic][basic-auth] or [digest][digest-auth]
+  authentication;
+* An authentication token (to identify you) or API key (to identify your
+  application), generated on a developer dashboard page; and
+* OAuth tokens, generated programmatically&mdash;these are particularly useful
+  for applications used by others to log into their own accounts, so your
+  application never sees the credentials used.
 
-For everything other than HTTP authentication, there are also a variety of ways to present the credential to the server, such as:
+For everything other than HTTP authentication, there are also a variety of ways
+to present the credential to the server, such as:
 
 * As a query parameter;
 * In an extra header in the request;
@@ -162,11 +171,23 @@ For everything other than HTTP authentication, there are also a variety of ways 
 * As a [cookie][cookie]; and
 * As an HTTP password, with or without a username.
 
-One important fact about HTTP is that it is _stateless_: each request is treated entirely separately, with no memory from one request to the next. This means that you must present your authentication credentials with every request you make to the API. (This is in contrast to other protocols like SSH or FTP, where you authenticate once at the start of a session, and then subsequent messages can be sent back and forth without the need for re-authentication.)
+One important fact about HTTP is that it is _stateless_: each request is treated
+entirely separately, with no memory from one request to the next. This means
+that you must present your authentication credentials with every request you
+make to the API. (This is in contrast to other protocols like SSH or FTP, where
+you authenticate once at the start of a session, and then subsequent messages
+can be sent back and forth without the need for re-authentication.)
 
-For example, NASA offers an API that exposes much of the data that they make public. They require an API key to identify you, but don't require any authentication beyond this.
+For example, NASA offers an API that exposes much of the data that they make
+public. They require an API key to identify you, but don't require any
+authentication beyond this.
 
-Let's try working with the NASA API now. To do this, first we need to generate our API key by providing our details at [the API home page][nasa-api]. Once that is done, NASA provide the API key instantly, and send a copy to the email address you provide. They helpfully also provide an example of an API query to try, querying the Astronomy Picture of the Day (APOD). This shows us that NASA expects the API key to be encoded as a query parameter.
+Let's try working with the NASA API now. To do this, first we need to generate
+our API key by providing our details at [the API home page][nasa-api]. Once that
+is done, NASA provide the API key instantly, and send a copy to the email
+address you provide. They helpfully also provide an example of an API query to
+try, querying the Astronomy Picture of the Day (APOD). This shows us that NASA
+expects the API key to be encoded as a query parameter.
 
 ~~~
 $ curl -i https://api.nasa.gov/planetary/apod?api_key=ejgThfasPCRf4kTd39ar55Aqhxv8cwKBdVOyZ9Rr
@@ -192,18 +213,34 @@ Strict-Transport-Security: max-age=31536000; preload
 ~~~
 {: .output}
 
-We can see that this API gives us JSON output including a links to two versions of the picture of the day, and then metadata about the picture including its title, description, and copyright. The headers also give us some information about our API usage&mdash;our rate limit is 2000 requests per day, and we have 1998 of these remaining (probably because the malware scanner on my email server tested the link first to make sure it wasn't malicious).
+We can see that this API gives us JSON output including a links to two versions
+of the picture of the day, and then metadata about the picture including its
+title, description, and copyright. The headers also give us some information
+about our API usage&mdash;our rate limit is 2000 requests per day, and we have
+1998 of these remaining (probably because the malware scanner on my email server
+tested the link first to make sure it wasn't malicious).
 
-With all of these ways to provide identification and authentication information, we don't have time to cover each possibility exhaustively. For the vast majority of APIs, there will exist good developer documentation that provides examples of how to use the token or other identifier that they provide to connect to their service, including examples.
+With all of these ways to provide identification and authentication information,
+we don't have time to cover each possibility exhaustively. For the vast majority
+of APIs, there will exist good developer documentation that provides examples of
+how to use the token or other identifier that they provide to connect to their
+service, including examples.
 
 
 ## More complicated queries
 
-Thus far we have queried APIs where any parameters are included as part of the effective "filename" on the server. For example, in `http://numbersapi.com/42`, the `42` is a parameter to the API, but at first glance it could equally well be an endpoint.
+Thus far we have queried APIs where any parameters are included as part of the
+effective "filename" on the server. For example, in `http://numbersapi.com/42`,
+the `42` is a parameter to the API, but at first glance it could equally well be
+an endpoint.
 
-Many APIs make this distinction more clear, by accepting arguments in a _query string_. This is a sequence of `name=value` pairs, separated from each other by `&`s, and separated from the endpoint by a `?`.
+Many APIs make this distinction more clear, by accepting arguments in a _query
+string_. This is a sequence of `name=value` pairs, separated from each other by
+`&`s, and separated from the endpoint by a `?`.
 
-We have already seen one example of this&mdash;we used it to provide our API key to NASA's APOD endpoint. The APOD endpoint also accepts other parameters, for example, to select the date or dates for which the picture is returned.
+We have already seen one example of this&mdash;we used it to provide our API key
+to NASA's APOD endpoint. The APOD endpoint also accepts other parameters, for
+example, to select the date or dates for which the picture is returned.
 
 ~~~
 $ curl -i https://api.nasa.gov/planetary/apod?date=2005-04-01&api_key=ejgThfasPCRf4kTd39ar55Aqhxv8cwKBdVOyZ9Rr
@@ -228,20 +265,30 @@ Strict-Transport-Security: max-age=31536000; preload
 ~~~
 {: .output}
 
-One benefit of being able to construct queries in this way is that the query is more self-descriptive&mdash;for unfamiliar APIs, keyword arguments are significantly easier to read than positional ones.
+One benefit of being able to construct queries in this way is that the query is
+more self-descriptive&mdash;for unfamiliar APIs, keyword arguments are
+significantly easier to read than positional ones.
 
-One other way to provide parameters, in particular when they are more complex data structures than can be easily represented in a small string, is to use JSON in the body of the request. Since constructing JSON by hand is tedious, we will defer such APIs to the next section.
+One other way to provide parameters, in particular when they are more complex
+data structures than can be easily represented in a small string, is to use JSON
+in the body of the request. Since constructing JSON by hand is tedious, we will
+defer such APIs to the next section.
 
 
 > ## NASA aerial imagery
 >
-> Look through NASA's API documentation. Use the Earth API to retrieve an aerial image of your current location.
+> Look through NASA's API documentation. Use the Earth API to retrieve an aerial
+> image of your current location.
 >
-> Try first using `curl` without any flags. What message do you get from `curl`? Why might this be?
+> Try first using `curl` without any flags. What message do you get from `curl`?
+> Why might this be?
 >
-> Now try inspecting the headers for the request using `curl -I`, and look at the `Content-Type`. Does this match your suspicion as to the reason for `curl`'s message?
+> Now try inspecting the headers for the request using `curl -I`, and look at
+> the `Content-Type`. Does this match your suspicion as to the reason for
+> `curl`'s message?
 >
-> Finally, follow `curl`'s advice to save the output to a file. Open the resulting file and see if it matches what you expected.
+> Finally, follow `curl`'s advice to save the output to a file. Open the
+> resulting file and see if it matches what you expected.
 {: .challenge}
 
 
