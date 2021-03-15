@@ -134,11 +134,6 @@ In this case, after identifying what type of request this is (a `GET` request), 
 
 The server then responds with a status code, followed by a lot of metadata. In this case, the status code `301` indicates that the site is no longer at the location we tried, so the metadata includes where to look instead. This is followed by a short web page explaining the same thing. Most browsers will see the `301` and automatically redirect to the correct location so you never see this error message.
 
-> ## No state
->
-> One important fact about HTTP is that it is _stateless_: each request is treated entirely separately, with no memory from one request to the next. As such, the request must include any information needed to link back to previous requests. For example, in an online shop, then the request must include an identifier of some kind, to allow the server to keep the contents of your basket from one page to the next.
-{: .callout}
-
 Let's see what happens when we follow the redirect. Web pages can be quite long, so for now let's ignore the body and look only at the headers.
 
 ~~~
