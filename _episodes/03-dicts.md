@@ -4,7 +4,7 @@ teaching: 10
 exercises: 5
 questions:
 - "What is a Python `dict`?"
-- "How do I use a `dict`?
+- "How do I use a `dict`?"
 objectives:
 - "Understand what a `dict` is."
 - "Be able to create, modify, and use `dict`s in Python."
