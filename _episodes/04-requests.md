@@ -20,7 +20,7 @@ keypoints:
 
 So far, we have been interacting with web APIs by using `curl` to send HTTP requests and then inspecting the responses at the command line. This is very useful for running quick checks that we are able to access the API, and debugging if we're not. However, to integrate web APIs into our software and analyses, we'd like to be able to make requests of web APIs from within Python, and work with the results.
 
-In principle we could make subprocess calls to `curl`, and capture and parse the results, but this would be very cumbersome. Fortunately, other people thought the same thing, and have made libraries available to help with this. Basic functionality around making and processing requests is built into the Python standard library, but far more popular is to use a package called `requests`, which is available from PiPI.
+In principle we could make subprocess calls to `curl`, and capture and parse the results, but this would be very cumbersome. Fortunately, other people thought the same thing, and have made libraries available to help with this. Basic functionality around making and processing requests is built into the Python standard library, but far more popular is to use a package called `requests`, which is available from PyPI.
 
 First off, let's check that we have `requests` installed.
 
