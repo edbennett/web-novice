@@ -59,6 +59,13 @@ to open the Developer Tools
 (alternatively, find the right option
 in your browser menu).
 
+> ## Developer Tools in Safari
+>
+> In Safari on macOS, the Developer Tools are hidden by default. To enable them,
+> open the Preferences window, go to the Advanced tab, and enable the "Show
+> Develop menu in menu bar" option.
+{: .callout}
+
 By using these, 
 by pressing the combination `CTRL+Shift+C`
 (or clicking on the mouse pointer icon 
