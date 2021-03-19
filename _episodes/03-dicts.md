@@ -108,8 +108,8 @@ Alternatively, if we want to get an element of the list and use a default value
 if the key isn't found, we can use the `.get()` method:
 
 ~~~
-print(caffeine_mg_per_serving.get("coffee", 0)
-print(caffeine_mg_per_serving.get("hot chocolate", 0)
+print(caffeine_mg_per_serving.get("coffee", 0))
+print(caffeine_mg_per_serving.get("hot chocolate", 0))
 ~~~
 {: .language-python}
 
