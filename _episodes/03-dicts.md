@@ -48,7 +48,7 @@ print("Coffee has", caffeine_mg_per_serving['coffee'], "mg of caffeine per servi
 {: .language-python}
 
 ~~~
-Coffee has 165 mg of caffeine per serving
+Coffee has 96 mg of caffeine per serving
 ~~~
 {: .output}
 
