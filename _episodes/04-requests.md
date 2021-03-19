@@ -239,7 +239,7 @@ As we saw in the previous episode, with `curl` from the command line,
 we would have to use the following command
 
 ~~~
-$ curl "http://datapoint.metoffice.gov.uk/public/data/val/wxfcx/all/json/310149?res=3hourly&key=$(cat metoffice-api-key.txt)" | less
+$ curl "http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/310149?res=3hourly&key=$(cat metoffice-api-key.txt)" | less
 ~~~
 {: .language-bash}
 
