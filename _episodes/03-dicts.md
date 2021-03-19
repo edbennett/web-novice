@@ -148,7 +148,7 @@ the key, but that is repetitive. We can instead use the `.items()` method of the
 `dict`:
 
 ~~~
-for drink, quantity in caffeine_mg_per_serivng.items():
+for drink, quantity in caffeine_mg_per_serving.items():
     print(drink.capitalize(), "contains", quantity, "mg of caffeine per serving")
 ~~~
 {: .language-python}
