@@ -17,7 +17,12 @@ pip install --user requests beautifulsoup4
 ~~~
 {: .language-bash}
 
-or with Anaconda.
+or with Anaconda use:
+
+~~~
+conda install requests beautifulsoup4
+~~~
+{: .language-bash}
 
 
 ### Met Office API Keys
