@@ -154,7 +154,7 @@ for drink, quantity in caffeine_mg_per_serving.items():
 {: .language-python}
 
 ~~~
-Coffee contains 165 mg of caffeine per serving
+Coffee contains 96 mg of caffeine per serving
 Tea contains 47 mg of caffeine per serving
 Cola contains 22 mg of caffeine per serving
 Energy drink contains 29 mg of caffeine per serving
