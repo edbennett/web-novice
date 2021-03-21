@@ -367,7 +367,7 @@ instructors
 > ## List the workshops
 >
 > Create a list of all the workshops,
-> reportin for each one:
+> reporting for each one:
 > - link
 > - location
 > - date
