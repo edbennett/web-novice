@@ -496,17 +496,12 @@ and check that our new comment is there.
 > > To print the headers:
 > >
 > > ~~~
-> > { print(kv) for kv in response.requests.headers.items}
+> > print(response.request.headers)
 > > ~~~
 > > {: .language-python}
 > >
 > > ~~~
-> > ('User-Agent', 'python-requests/2.25.1')
-> > ('Accept-Encoding', 'gzip, deflate')
-> > ('Accept', '*/*')
-> > ('Connection', 'keep-alive')
-> > ('Content-Length', '26')
-> > ('Authorization', 'Basic XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+> > {'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
 > > ~~~
 > > {: .output}
 > >
