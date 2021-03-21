@@ -447,6 +447,7 @@ We will now create the body of the comment,
 as a JSON string:
 
 ~~~
+import json
 body = json.dumps({"body": "Another test comment"})
 ~~~
 {: .language-python}
