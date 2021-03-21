@@ -139,7 +139,7 @@ obtaining a soup object
 that we still need to navigate:
 
 ~~~
-soup = BeautifulSoup(r.text,"html.parser")
+soup = BeautifulSoup(response.text,"html.parser")
 ~~~
 {: .language-python}
 
