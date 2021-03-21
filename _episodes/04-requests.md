@@ -545,7 +545,7 @@ and check that our new comment is there.
 >
 > > ## Solution
 > > ~~~
-> > r = requests.post(url=url,data=body)
+> > r = requests.post(url="https://api.github.com/repos/mmesiti/aimlac-cdt-2021-03/issues/1/comments",data=body)
 > > r
 > > ~~~
 > > {: .language-python}
