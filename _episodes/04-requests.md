@@ -270,7 +270,7 @@ let's quickly print its headers
 (which has the structure of a dictionary):
 
 ~~~
-for key, value in response.header.items():
+for key, value in response.headers.items():
     print((key, value)) 
 ~~~
 {: .language-python}
