@@ -350,11 +350,13 @@ data["SiteRep"]["Wx"]
 > > e.g. Cardiff:
 > >
 > > ~~~
-> > [ site for site in sitelist if site["name"] == "Cardiff"] 
+> > for site in sitelist:
+> >     if site["name"] == "Cardiff":
+> >         print(site['id'])
 > > ~~~
 > > {: .language-python}
 > >
-> > One of the location ID is `350758`,
+> > Cardiff has two locations, one of the location's ID is `350758`,
 > > so we can use it:
 > >
 > > ~~~
