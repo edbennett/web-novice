@@ -328,8 +328,14 @@ from the text content of `td1`:
 
 ~~~
 td1_text_split = td1.text.split("Instructors:")
-instructors = [ name.strip() for name in td1_text_split[1].split(",")]
-instructors
+
+# create a blank list to populate with the instructor names
+instructors = []
+
+for name in td1_text_split[1].split(","):
+    instructors.append(name.strip())
+
+print(instructors)
 ~~~
 {: .language-python}
 
@@ -388,7 +394,9 @@ instructors
 > >     instructors_string = people[0]
 > >     # we ignore helpers, might not be present
 > >     # helpers_string = people[1] 
-> >     instructors = [ n.strip() for n in instructors_string.split(",")]
+> >     instructors = []
+> >     for n in instructors_string.split(","):
+> >         instructors.append(n.strip())
 > >     date = td2.text.strip()
 > >
 > >     return dict(
@@ -398,7 +406,9 @@ instructors
 > >        date = date
 > >     ) 
 > >
-> > workshops = [ process_row(row) for row in rows ]
+> > workshops = []
+> > for row in rows:
+> >     workshops.append(process_row(row))
 > > ~~~
 > > {: .language-python}
 > {: .solution}
