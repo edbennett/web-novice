@@ -13,14 +13,14 @@ libraries. Please install them with your Python package manager;
 for example, with `pip`, use: 
 
 ~~~
-pip install --user requests beautifulsoup4
+$ pip install --user requests beautifulsoup4
 ~~~
 {: .language-bash}
 
 or with Anaconda use:
 
 ~~~
-conda install requests beautifulsoup4
+$ conda install requests beautifulsoup4
 ~~~
 {: .language-bash}
 
