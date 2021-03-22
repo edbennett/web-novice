@@ -60,7 +60,7 @@ A request is composed of
 a start line, a number of headers and an optional body.
 Practically,
 a request needs to specify one of the HTTP _verbs_ 
-and a URI (Uniform Resource Identifier, the "address" of the resource)
+and a URL 
 in the start line
 and an optional payload (the body).
 
