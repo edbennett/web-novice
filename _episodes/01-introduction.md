@@ -13,17 +13,24 @@ objectives:
 keypoints:
 - "A protocol is a standard for communicating data across a network. A port is a number to identify which program should process a network connection."
 - "HTTP is the protocol originally designed for requesting and receiving Web pages, but now also used as the basis for a variety of APIs. HTTPS is the encrypted version of HTTP."
+- "Every page on the world wide web is identified with a URL or Uniform Resource Locator."
 - "A request is how you tell a server what you want to see. A response will either give you what you asked for, or tell you why the server can't do that. Both requests and responses have a header, and optionally a body."
 - "We can make requests and receive responses, as well as see their headers, using `curl`."
 ---
 
-Since its introduction to the world in 1991, the World Wide Web has gone from
-the toy of computer scientists and particle physicists to a dominant part of
+First introduced to the world in 1991, the World Wide Web brought together three key ideas:
+
+1. The use of HTML (Hypertext Markup Language) documents which could container hyperlinks to other documents (or different parts of the same document). These could reference documents located on any web server in the world.
+2. That every file on the world wide web would have a unique URL (Uniform Resource Locator). 
+3. The Hypertext Transfer Protocol (HTTP) that is used to transfer data from the web server to the requesting client.
+
+Since then it has gone from the toy of computer scientists and particle physicists to a dominant part of
 everyday life for billions of people. It has gradually consumed many services
 that were previously separate online services, or not available on the Internet
 at all. Since the mid-2000s, the Web has increasingly been used to go beyond its
-traditional usage of serving web pages to browsers, instead serving data to and
-accepting instructions from applications that can make use of it.
+traditional usage of serving web pages to browsers. The same HTTP protocol which once 
+served static HTML pages and images is now used to send dynamic content generating on 
+the fly by other computer programs.
 
 These Application Programming Interfaces (APIs) provide incredible amounts of
 structured data, as well as the ability to control things that may previously
@@ -85,10 +92,13 @@ local machine, on port 8888. Since only one application can listen to a port at
 a time, sometimes Jupyter finds it can't listen on port 8888, and so will
 reserve port 8889 or 8890 instead.
 
+## URLs
+
+A URL (also sometimes known as a URI or Uniform Resource Indicator) consists of two or three parts: the protocol followed by ://, the server name or IP address and optionally the path to the resource we wish to access. For example the URL http://carpentries.org means we want to access the default location on the server carpentries.org using the HTTP protocol. The URL https://carpentries.org/contact/ means we want to access the contact location on the carpentries.org server using the secure HTTPS protocol.
 
 ## Requests and responses
 
-The two main objects in HTTP are the _request_ and the _response_. Each HTTP connection is initiated by sending a request, and is replied to with a response. Both the request and response have a _header_, that defines metadata about what is requested and what is included in the response, and both can also have a _body_, containing data. To look at these in more detail, we can use the `curl` command. Specifically, to see the request headers, we can use `curl -v`
+The two main objects in HTTP are the _request_ and the _response_. Each HTTP connection is initiated by sending a request, and is replied to with a response. Both the request and response have a _header_, that defines metadata about what is requested and what is included in the response, and both can also have a _body_, containing data. To look at these in more detail, we can use the `curl` command. Specifically, to see the request headers, we can use `curl -v` followed by the URL we wish to request.
 
 ~~~
 $ curl -v http://carpentries.org
