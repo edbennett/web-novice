@@ -92,10 +92,13 @@ local machine, on port 8888. Since only one application can listen to a port at
 a time, sometimes Jupyter finds it can't listen on port 8888, and so will
 reserve port 8889 or 8890 instead.
 
+## URLs
+
+A URL (also sometimes known as a URI or Uniform Resource Indicator) consists of two or three parts: the protocol followed by ://, the server name or IP address and optionally the path to the resource we wish to access. For example the URL http://carpentries.org means we want to access the default location on the server carpentries.org using the HTTP protocol. The URL https://carpentries.org/contact/ means we want to access the contact location on the carpentries.org server using the secure HTTPS protocol.
 
 ## Requests and responses
 
-The two main objects in HTTP are the _request_ and the _response_. Each HTTP connection is initiated by sending a request, and is replied to with a response. Both the request and response have a _header_, that defines metadata about what is requested and what is included in the response, and both can also have a _body_, containing data. To look at these in more detail, we can use the `curl` command. Specifically, to see the request headers, we can use `curl -v`
+The two main objects in HTTP are the _request_ and the _response_. Each HTTP connection is initiated by sending a request, and is replied to with a response. Both the request and response have a _header_, that defines metadata about what is requested and what is included in the response, and both can also have a _body_, containing data. To look at these in more detail, we can use the `curl` command. Specifically, to see the request headers, we can use `curl -v` followed by the URL we wish to request.
 
 ~~~
 $ curl -v http://carpentries.org
