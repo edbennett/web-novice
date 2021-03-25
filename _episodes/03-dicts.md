@@ -72,6 +72,7 @@ One thing that we can't do for lists is create new elements by indexing with
 
 ~~~
 caffeine_mg_per_serving['green tea'] = 28
+print(caffeine_mg_per_serving)
 ~~~
 {: .language-python}
 
