@@ -6,7 +6,7 @@ To follow this lesson, you will need to have a Unix shell and Python installed.
 If you do not already have these set up, then please follow the instructions at
 [the Carpentries workshop template][workshop-template]
 
-### Requests and BeautifulSoup4
+## Requests and BeautifulSoup4
 
 We will be using the `requests` and `beautifulsoup4`
 libraries. Please install them with your Python package manager;
@@ -25,7 +25,7 @@ $ conda install requests beautifulsoup4
 {: .language-bash}
 
 
-### Met Office API Keys
+## Met Office API Keys
 
 We will be making requests from the Met Office Data point.
 In order to follow this section you will need a valid "API key"
