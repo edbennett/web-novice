@@ -442,7 +442,8 @@ in web scraping.
 > > {: .language-python}
 > > The epex table is in two parts:
 > > 1. the first part just shows baseload and peakload prices plus some whitespace (in total its 5 lines long)
-> > 2. the rest of the data is the hourly prices and has more columns
+> > 2. the rest of the data is the hourly prices and has more columns.
+> > 
 > > HTML allows variable width tables like this, but pandas doesn't like them.
 > > Lets strip off those first 5 rows
 > > to make it a valid table again append `<table>` and `</table>` to the beginning and end:
@@ -455,7 +456,7 @@ in web scraping.
 > > df = pandas.read_html(str(rows))[0]
 > > ~~~
 > > {: .language-python}
-> > # the timestamps aren't stored in the table but a separate div, lets recreate them
+> > The timestamps aren't stored in the table but a separate div, lets recreate them
 > > ~~~
 > > df['time'] = range(0,24)
 > > df = df.set_index('time')
