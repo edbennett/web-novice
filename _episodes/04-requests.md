@@ -317,7 +317,7 @@ data["SiteRep"]["Wx"]
 
 > ## Another location
 >
-> As described in [the API reference](metoffice-api-reference)
+> As described in [the API reference][metoffice-api-reference]
 > the Met Office has a list of locations available 
 > at `/public/data/val/wxfcs/all/json/sitelist`.
 > Choose a site near you.
