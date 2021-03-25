@@ -238,10 +238,8 @@ Many APIs make this distinction more clear, by accepting arguments in a _query
 string_. This is a sequence of `name=value` pairs, separated from each other by
 `&`s, and separated from the endpoint by a `?`. 
 
-~~~
-## Using quotes with Curl
-When we put an & into a web address for Curl we need to put it inside quotes. If we don't then our shell will interpret them as meaning we should run the preceeding command in the background instead of passing it as a parameter to curl. This will effectively truncate the address to everything up to the first &.
-~~~
+> ## Using quotes with Curl
+> When we put an & into a web address for Curl we need to put it inside quotes. If we don't then our shell will interpret them as meaning we should run the preceeding command in the background instead of passing it as a parameter to curl. This will effectively truncate the address to everything up to the first &.
 {: .callout}
 
 We have already seen one example of this&mdash;we used it to provide our API key
