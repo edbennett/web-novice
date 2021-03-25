@@ -204,12 +204,15 @@ Green tea contains 28 mg of caffeine per serving
 >>
 >> To add other functions, the `operations` `dict` could be adjusted as:
 >>
+>> ~~~
 >> operations = {
 >>     'min': np.min,
 >>     'max': np.max,
 >>     'mean': np.mean,
 >>     'std': np.std
 >> }
+>> ~~~
+>> {: .language-python}
 > {: .solution}
 {: .challenge}
 
