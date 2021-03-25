@@ -1,7 +1,7 @@
 ---
 title: "Elements of Web Scraping with BeautifulSoup"
-teaching: 0
-exercises: 0
+teaching: 20
+exercises: 10
 questions:
 - "How can I obtain data in a programmatic way from the web without an API?"
 objectives:

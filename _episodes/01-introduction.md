@@ -1,7 +1,7 @@
 ---
 title: "HTTP"
-teaching: 0
-exercises: 0
+teaching: 10
+exercises: 5
 questions:
 - "What are protocols and ports?"
 - "What are HTTP and HTTPS?"

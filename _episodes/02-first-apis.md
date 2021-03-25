@@ -1,7 +1,7 @@
 ---
 title: "What do APIs look like?"
-teaching: 0
-exercises: 0
+teaching: 15
+exercises: 10
 questions:
 - "How can requests be made of web APIs?"
 - "How can responses from web APIs arrive?"
