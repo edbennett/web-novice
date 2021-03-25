@@ -432,25 +432,36 @@ in web scraping.
 > How would you extract the price of the energy as a function of time?
 >
 > > ## Solution
+> > ~~~
 > > import requests
 > > import pandas
 > > from bs4 import BeautifulSoup
 > > response = requests.get("https://www.epexspot.com/en/market-data?market_area=GB&trading_date=2021-03-19&delivery_date=2021-03-20&underlying_year=&modality=Auction&sub_modality=DayAhead&product=60&data_mode=table&period=")
 > > soup = BeautifulSoup(response.text,"html.parser")
-> > # the epex table is in two parts
-> > # the first part just shows baseload and peakload prices plus some whitespace
-> > # in total its 5 lines long
-> > # the rest of the data is the hourly prices and has more columns
-> > # HTML allows variable width tables like this, but pandas doesn't like them
-> > # lets strip off those first 5 rows
-> > # to make it a valid table again append <table> and </table> to the beginning and end
+> > ~~~
+> > {: .language-python}
+> > The epex table is in two parts:
+> > 1. the first part just shows baseload and peakload prices plus some whitespace (in total its 5 lines long)
+> > 2. the rest of the data is the hourly prices and has more columns
+> > HTML allows variable width tables like this, but pandas doesn't like them.
+> > Lets strip off those first 5 rows
+> > to make it a valid table again append `<table>` and `</table>` to the beginning and end:
+> > ~~~
 > > rows = "<table>" +str(soup.find("table").find_all("tr")[5:]) + "</table>"
-> > # convert to a pandas dataframe
+> > ~~~
+> > {: .language-python}
+> > Then we can convert the string to a pandas dataframe:
+> > ~~~
 > > df = pandas.read_html(str(rows))[0]
+> > ~~~
+> > {: .language-python}
 > > # the timestamps aren't stored in the table but a separate div, lets recreate them
+> > ~~~
 > > df['time'] = range(0,24)
 > > df = df.set_index('time')
-> > # we now have the EPEX data inside a pandas dataframe ready for processing, graphing etc.
+> > ~~~
+> > {: .language-python}
+> > we now have the EPEX data inside a pandas dataframe ready for processing, graphing etc.
 > {: .solution}
 {: .challenge}
 
