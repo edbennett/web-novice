@@ -250,14 +250,14 @@ using a dictionary to contain all the arguments.
 > > ~~~
 > > {: .language-python}
 > > ~~~
-> > aber-pubs : 2021-11-24T14:19:27Z
-> > git-novice : 2021-11-24T10:21:58Z
-> > ccintro-2021 : 2021-09-21T13:57:35Z
-> > pl_curves : 2021-03-24T14:28:25Z
-> > training-cloud-vm : 2021-03-23T13:43:03Z
-> > grid : 2021-03-10T11:59:09Z
-> > docker-introduction-2021 : 2021-01-26T19:20:19Z
 > > testing_exercise : 2020-04-28T13:56:42Z
+> > docker-introduction-2021 : 2021-01-26T19:20:19Z
+> > grid : 2021-03-10T11:59:09Z
+> > training-cloud-vm : 2021-03-23T13:43:03Z
+> > pl_curves : 2021-03-24T14:28:25Z
+> > ccintro-2021 : 2021-09-21T13:57:35Z
+> > git-novice : 2021-11-24T10:21:58Z
+> > aber-pubs : 2021-11-24T14:19:27Z
 > > ~~~
 > > {: .output}
 > {: .solution} 
