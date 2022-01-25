@@ -111,8 +111,29 @@ From the [BeautifulSoup documentaion][bs4-docs]:
 > or days of work.
 {: .quote}
 
-First of all, 
-we import the necessary libraries 
+First of all, let's verify that we have BeautifulSoup installed:
+~~~
+python -c "import bs4"
+~~~
+{: .language-bash}
+If there is no output, then we are all set.
+If instead you see something along the lines of 
+~~~
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'bs4'
+~~~
+{: .output}
+Then you have to install the package.
+One way of doing that is via `pip`, 
+with
+~~~
+pip install beautifulsoup4
+~~~
+{: .language-bash}
+
+Once we are sure the BeautifulSoup is available,
+we can import the necessary libraries in Python
 and use `requests` to GET 
 the Carpentries website content:
 
@@ -139,7 +160,8 @@ obtaining a soup object
 that we still need to navigate:
 
 ~~~
-soup = BeautifulSoup(response.text,"html.parser")
+soup = BeautifulSoup(markup=response.text,
+                     features="html.parser")
 ~~~
 {: .language-python}
 
@@ -182,10 +204,11 @@ inside a `<h2>` tag (code reindented for clarity)
 
 We can then look for the table 
 by finding the HTML element 
-that contains that text:
+that contains that text,
+using the `string` keyword argument:
 
 ~~~
-(soup.find(string = "Upcoming Carpentries Workshops"))
+(soup.find(string="Upcoming Carpentries Workshops"))
 ~~~
 {: .language-python}
 
@@ -213,7 +236,6 @@ at the root of the tree
 The second parent in the list
 is the one that also contains 
 the table we are interested in:
-
 ~~~
 (soup
  .find(string = "Upcoming Carpentries Workshops")
@@ -419,7 +441,7 @@ print(instructors)
 
 Beautiful Soup is a rich library
 that has a lot of powerful features 
-than we are able to discuss here.
+that we are unable to discuss here.
 
 A close look at [the official documentation][bs4-docs]
 is worth the time 
@@ -436,7 +458,18 @@ in web scraping.
 > > import requests
 > > import pandas
 > > from bs4 import BeautifulSoup
-> > response = requests.get("https://www.epexspot.com/en/market-data?market_area=GB&trading_date=2021-03-19&delivery_date=2021-03-20&underlying_year=&modality=Auction&sub_modality=DayAhead&product=60&data_mode=table&period=")
+> >
+> > response = requests.get("https://www.epexspot.com/en/market-data",
+> >                         params=dict(market_area="GB",
+> >                                     trading_date="2021-03-19",
+> >                                     delivery_date="2021-03-20",
+> >                                     underlying_year="",
+> >                                     modality="Auction",
+> >                                     sub_modality="DayAhead",
+> >                                     product="60",
+> >                                     data_mode="table",
+> >                                     period=""))
+> >
 > > soup = BeautifulSoup(response.text,"html.parser")
 > > ~~~
 > > {: .language-python}

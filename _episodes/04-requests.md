@@ -47,13 +47,14 @@ $ pip install requests
 {: .language-bash}
 
 
-## Recap
+## Recap: Requests, Responses and JSON
 
 As a reminder, communication with web APIs is done through the HTTP protocol,
 and happens through _messages_, which are of two kinds: _requests_ and _responses_.
 
 A request is composed of 
 a start line, a number of headers and an optional body.
+
 Practically,
 a request needs to specify one of the HTTP _verbs_ 
 and a URL 
@@ -197,7 +198,7 @@ response.text
 
 This shows us the same HTML source code as we obtained from `curl` earlier.
 
-## GET with parametes
+## GET with parameters
 
 As we have seen when talking about `curl`, 
 some endpoints accept parameters in GET requests. 
@@ -278,18 +279,21 @@ This will require a GitHub Personal Access Token.
 If you don't already have one, 
 then the instructions in the [Setup][setup] walk through how to obtain one.
 
-> ## Take care with access tokens
+> ## Take care with access tokens!
 >
 > This access token identifies your individual user account, rather than just
 > thet application you're developing, so anyone with this token can impersonate
 > you and manage your account. Be **very** sure not to commit this (or any other
-> personal access token) to a public repository, as it will very rapidly be
-> discovered and used against you.
+> personal access token) to a public repository, 
+> (or any repository that might be made public in the future) 
+> as it will very rapidly be discovered and used against you.
 >
-> The most common mistake some people have made here is committing tokens for a
-> cloud service. This has allowed unscrupulous individuals to take over cloud
-> computing services and spend hundreds of thousands of pounds on activities
-> such as mining cryptocurrency.
+> The most common mistake some people have made here 
+> is committing tokens for a cloud service. 
+> This has allowed unscrupulous individuals 
+> to take over cloud computing services 
+> and spend hundreds of thousands of pounds 
+> on activities such as mining cryptocurrency.
 {: .callout}
 
 To POST requests, we can use the function `requests.post`.
@@ -532,7 +536,7 @@ let's quickly print its headers
 
 ~~~
 for key, value in response.headers.items():
-    print(key,':', value)
+    print((key, value))
 ~~~
 {: .language-python}
 
