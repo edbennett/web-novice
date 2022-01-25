@@ -452,6 +452,7 @@ in web scraping.
 >
 > Look at [EPEX SPOT's data on the energy market][epex-data].
 > How would you extract the price of the energy as a function of time?
+> Can you look at other countries, and on different dates?
 >
 > > ## Solution
 > > ~~~
@@ -459,6 +460,7 @@ in web scraping.
 > > import pandas
 > > from bs4 import BeautifulSoup
 > >
+> > # From the url displayed in the browser in the address bar 
 > > response = requests.get("https://www.epexspot.com/en/market-data",
 > >                         params=dict(market_area="GB",
 > >                                     trading_date="2021-03-19",
@@ -496,6 +498,10 @@ in web scraping.
 > > ~~~
 > > {: .language-python}
 > > we now have the EPEX data inside a pandas dataframe ready for processing, graphing etc.
+> > We can try and change the parameters 
+> > (for example, using "DE-LU") for another nation.
+> > Are you able to change the parameters for another date?
+> > Do you get different results?
 > {: .solution}
 {: .challenge}
 
@@ -527,6 +533,6 @@ and automate the interaction with it.
 
 [bs4-docs]: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 [carpentries]: https://carpentries.org
-[epex-data]: https://www.epexspot.com/en/market-data?market_area=GB&trading_date=2021-03-14&delivery_date=2021-03-15&underlying_year=&modality=Auction&sub_modality=DayAhead&product=60&data_mode=table&period=
+[epex-data]: https://www.epexspot.com/en/market-data?market_area=GB&trading_date=2022-01-25&delivery_date=2022-01-26&underlying_year=&modality=Auction&sub_modality=DayAhead&product=60&data_mode=table&period=
 [mdn-elements-reference]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 [selenium]: https://www.selenium.dev/documentation/en/webdriver/
