@@ -1,7 +1,7 @@
 ---
 title: "dicts"
-teaching: 10
-exercises: 5
+teaching: 12
+exercises: 8
 questions:
 - "What is a Python `dict`?"
 - "How do I use a `dict`?"

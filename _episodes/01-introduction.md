@@ -1,6 +1,6 @@
 ---
 title: "HTTP"
-teaching: 10
+teaching: 15
 exercises: 5
 questions:
 - "What are protocols and ports?"

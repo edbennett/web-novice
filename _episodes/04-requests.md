@@ -1,7 +1,7 @@
 ---
 title: "Requests"
-teaching: 20
-exercises: 10
+teaching: 40
+exercises: 20
 questions:
 - "How can I send HTTP requests to a web server from Python?"
 - "How to interact with web services that require authentication?"
