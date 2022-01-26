@@ -124,7 +124,7 @@ example can be found [on GitHub][newton-docs].
 
 > ## Errors (or not)
 >
-> Try using the `simplify` endopint for Newton to simplify the expression
+> Try using the `simplify` endpoint for Newton to simplify the expression
 > `0^(-1)` (i.e. 1 divided by 0).
 >
 > Use `curl -i` to see both the headers and the response. Do these match what
