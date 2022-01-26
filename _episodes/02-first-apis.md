@@ -66,7 +66,7 @@ handled. [Newton][newton] is a web API for advanced mathematics. One thing it
 can do is factorization:
 
 ~~~
-$ curl https://newton.now.sh/api/v2/factor/x^2-1
+$ curl https://newton.vercel.app/api/v2/factor/x^2-1
 ~~~
 {: .language-bash}
 
@@ -96,7 +96,7 @@ respectively).
 endpoint, for integration.
 
 ~~~
-$ curl https://newton.now.sh/api/v2/integrate/x^2-1
+$ curl https://newton.vercel.app/api/v2/integrate/x^2-1
 ~~~
 {: .language-bash}
 
@@ -301,6 +301,6 @@ defer such APIs to the next section.
 [cookie]: https://en.wikipedia.org/wiki/HTTP_cookie
 [digest-auth]: https://en.wikipedia.org/wiki/Digest_access_authentication
 [nasa-api]: https://api.nasa.gov
-[newton]: https://newton.now.sh
+[newton]: https://newton.vercel.app
 [newton-docs]: https://github.com/aunyks/newton-api
 [numbersapi]: http://numbersapi.com
