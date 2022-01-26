@@ -273,7 +273,7 @@ To modify state, other HTTP verbs should be used instead.
 Most commonly used for this purpose in web APIs are POST requests.
 
 As such, we'll switch to using the
-GitHub API to look at how POST requests can be used.
+[GitHub API][github-api-docs-repo] to look at how POST requests can be used.
 
 This will require a GitHub Personal Access Token. 
 If you don't already have one, 
@@ -656,3 +656,4 @@ data["SiteRep"]["Wx"]
 [metoffice-api-reference]: https://www.metoffice.gov.uk/services/data/datapoint/api-reference
 [mmesiti-issues]: https://github.com/mmesiti/web-novice-test-repo/issues/1
 [setup]: ../setup
+

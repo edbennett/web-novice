@@ -281,7 +281,7 @@ defer such APIs to the next section.
 
 > ## NASA aerial imagery
 >
-> Look through NASA's API documentation. Use the Earth API to retrieve an aerial
+> Look through [NASA's API documentation][nasa-api]. Use the Earth API to retrieve an aerial
 > image of your current location.
 >
 > Try first using `curl` without any flags. What message do you get from `curl`?
