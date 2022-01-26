@@ -25,7 +25,7 @@ $ conda install requests beautifulsoup4
 {: .language-bash}
 
 
-## (optional) GitHub Personal Access Token
+## GitHub Personal Access Token
 
 We will be connecting to GitHub's API in this lesson. 
 To do this, might decide to use an Access Token
