@@ -269,5 +269,5 @@ Units: mg per serving
 
 
 
-[MAYO bk-caffeine]: https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/caffeine/art-20049372
+[mayo-caffeine]: https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/caffeine/art-20049372
 [python-novice-inflammation]: https://swcarpentry.github.io/python-novice-inflammation
