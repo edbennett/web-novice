@@ -90,7 +90,30 @@ print(caffeine_mg_per_serving)
 > end.
 {: .callout}
 
-What if we want to know whether we can use a particular key? In a list, this is
+
+## Missing values
+
+`dict`s will throw an error, though, 
+if we try to _access_ values for keys that we have not added previously.
+~~~
+print(caffeine_mg_per_serving['guarana'])
+~~~
+{: .language-python}
+
+~~~
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+<ipython-input-2-dff37d2ef7d1> in <module>
+----> 1 caffeine_mg_per_serving['guarana']
+
+KeyError: 'guarana'
+~~~
+{: .output}
+
+To write more robust code, we might like to check
+whether we can use a particular key
+before trying to access it.
+In a list, this is
 simple, as we can check whether a particular index is less than the length of
 the list. With a dict, we need to use a keyword to check whether a particular
 key is `in` the list:
@@ -122,6 +145,8 @@ print(caffeine_mg_per_serving.get("hot chocolate", 0))
 
 (If you don't specify the default value, then Python uses `None` for keys that
 are not found.)
+
+## Looping 
 
 Now, a particularly useful thing to do with a list is to loop over it. What
 happens when we loop over a `dict`?
@@ -167,8 +192,9 @@ Green tea contains 28 mg of caffeine per serving
 >
 > In this episode, we have used strings as keys, as this is what we're most
 > likely to see when working with JSON. This is not a Python restriction,
-> however. We can use any "hashable" type as a `dict` key; this includes
-> strings, numbers, and tuples, among other types.
+> however. We can use any "hashable" type as a `dict` __key__; this includes
+> strings, numbers, and tuples, among other __immutable__ types.
+> Most notably, this excludes lists and dicts (which are mutable).
 {: .callout}
 
 > ## `dict`s of functions
@@ -215,6 +241,33 @@ Green tea contains 28 mg of caffeine per serving
 >> {: .language-python}
 > {: .solution}
 {: .challenge}
+
+## Nested dicts
+
+It is worth noting that the values in a `dict` can be of any type
+(this is not true for the keys).
+One notable case, is that values can be themselves `dict`s:
+~~~
+nutrition_values = {'energy': {'units': 'kCal/100g',
+                               'values': {'white bread': 273,
+                                          'almonds': 512}},
+                    'caffeine': {'units': 'mg per serving',
+                                 'values': caffeine_mg_per_serving}}
+~~~
+{: .language-python}
+It is then possible to access data using multiple square bracket expressions:
+~~~
+print("Caffeine content of coffee:", nutrition_values['caffeine']['values']['coffee'])
+print("Units:", nutrition_values['caffeine']['units'])
+~~~
+{: .language-python}
+~~~
+Caffeine content of coffee: 96 
+Units: mg per serving
+~~~
+{: .output}
+
+
 
 [mayo-caffeine]: https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/caffeine/art-20049372
 [python-novice-inflammation]: https://swcarpentry.github.io/python-novice-inflammation
