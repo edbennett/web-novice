@@ -23,7 +23,7 @@ from the toy of computer scientists and particle physicists to a dominant part
 of everyday life for billions of people. At its core, the initial World Wide Web
 concept brought together three key ideas:
 
-1. The use of HTML (Hypertext Markup Language) documents which could container
+1. The use of HTML (Hypertext Markup Language) documents which could contain
    hyperlinks to other documents (or different parts of the same document).
    These could reference documents located on any web server in the world.
 2. That every file on the world wide web would have a unique URL (Uniform
@@ -34,7 +34,7 @@ concept brought together three key ideas:
 It has gradually consumed many services that were previously separate online
 services, or not available on the Internet at all.
 
-Since the mid-2000s, the Web has increasingly been used to go beyond its
+Since the mid-2000s, the Web has increasingly been used to go beyond
 this traditional model of serving HTML to browsers. The same HTTP protocol which
 once served static HTML pages and images is now used to send dynamic content
 generated on the fly for consumption by other computer programs.
