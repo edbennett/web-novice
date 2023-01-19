@@ -282,7 +282,7 @@ then the instructions in the [Setup][setup] walk through how to obtain one.
 > ## Take care with access tokens!
 >
 > This access token identifies your individual user account, rather than just
-> thet application you're developing, so anyone with this token can impersonate
+> the application you're developing, so anyone with this token can impersonate
 > you and manage your account. Be **very** sure not to commit this (or any other
 > personal access token) to a public repository, 
 > (or any repository that might be made public in the future) 

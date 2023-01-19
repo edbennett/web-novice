@@ -511,7 +511,7 @@ in web scraping.
 The JavaScript code running on the page 
 can actively change the structure of the HTML document.
 For some web pages, 
-this is an crucial part
+this is a crucial part
 of the rendering process:
 in some of those cases 
 the JavaScript code must be run
