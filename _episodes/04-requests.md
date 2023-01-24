@@ -314,7 +314,8 @@ and pass it to `requests.post`.
 First of all, let's load the GitHub access token:
 
 ~~~
-ghtoken = open("github-access-token.txt",'r').read().strip()
+with open("github-access-token.txt", "r") as file:
+  ghtoken = file.read().strip()
 ~~~
 {: .language-python}
 
@@ -479,7 +480,8 @@ This can either be done from a file,
 or by specifying the key directly in a settings file.
 
 ~~~
-api_key = open("metoffice-api-key.txt",'r').read().strip()
+with open("metoffice-api-key.txt", "r") as file:
+  api_key = file.read().strip()
 ~~~
 {: .language-python}
 
