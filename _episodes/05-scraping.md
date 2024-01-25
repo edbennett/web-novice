@@ -264,7 +264,7 @@ Now let's focus on the `table` element:
 
 ~~~
 (soup
- .find(string = "Upcoming carpentries workshops")
+ .find(string = "Upcoming Carpentries Workshops")
  .find_parents()[1]
  .find("table"))
 ~~~
@@ -287,7 +287,7 @@ Now we can get a list of row elements with
 
 ~~~
 rows = (soup
- .find(string = "upcoming carpentries workshops")
+ .find(string = "Upcoming Carpentries Workshops")
  .find_parents()[1]
  .find("table")
  .find_all("tr"))
